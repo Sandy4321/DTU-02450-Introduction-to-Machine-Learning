@@ -167,31 +167,22 @@ If we look at the salary level comparison, a clear tendency appears when employe
 
 The following two tables shows the percentages of the empoyees who have left or stayed for each of the other binary variables:
 
-\begin{table}[!h]
-\parbox{.45\linewidth}{
-\centering
-\begin{tabular}{lcc}
-       & \multicolumn{1}{l}{No Accident} & \multicolumn{1}{l}{Accident} \\
-Stayed & 62.86 \%                        & 13.33 \%                     \\
-Left   & 22.68 \%                        & 1.13 \%                     
-\end{tabular}
-}
-\hfill
-\parbox{.45\linewidth}{
-\centering
-\begin{tabular}{lcc}
-       & \multicolumn{1}{l}{Not Promoted} & \multicolumn{1}{l}{Promoted} \\
-Stayed & 74.19 \%                         & 2.00 \%                      \\
-Left   & 23.68 \%                         & 0.13 \%                     
-\end{tabular}
-}
-\end{table}
+    ##         
+    ##          no accident accident
+    ##   stayed       62.86    13.33
+    ##   left         22.68     1.13
+
+    ##         
+    ##          not promoted promoted
+    ##   stayed        74.19     2.00
+    ##   left          23.68     0.13
+
 From the tables we can see that emplyees show a tendency to stay when when they have had an accident and employees who get promoted tend to stay at the firm in comparison to the ones who are not promoted. A more interesting observation in the first table is that one third of the employees who hasn't experienced any accidents tend to leave the company while this ratio falls to almost one twelfth for the ones who experienced an accident at work. This gives an idea about the company's positive approach to the employees after they received an accident. When we look at the second table, we can again see that approximately one third of the employees who are not promoted tend to leave the company while this ratio falls to almost one twntieth for employees who are promoted. This is an expected behaviour for employees to stay in the company for some more time after they receive the promotion.
 
 2.5 Correlation plot
 --------------------
 
-The correlation matrix below was plotted to visualize any possible linear relationship between numerical variables. Due to the fact that there are a high number of observations, the color code isn't perfectly visible in the limited area of the plot but they are more visible when zoomed in: <img src="project1_files/figure-markdown_github/unnamed-chunk-7-1.png" style="display: block; margin: auto auto auto 0;" /> The satisfaction level plotted against last evaluation shows three groups very likely to leave; two groups which have high scores in their last evaluation and one group which has low. The two high scoring groups are split by satisfaction level as one group finds high satisfaction while the other finds moderate satisfaction at work. The low scoring group in their last evaluation find little to none satisfaction at the company. The satisfaction level and the number of projects doesn't show a clear correlation but it can be seen slightly that employees with high number of projects completed tend more to leave. A higher correlation can be seen between satisfaction level and the average monthly hours with employees that have high working hours with high satisfaction or employees with low working hours and low satisfaction tend to leave the company. Time spent at company show a positive correlation with the satisfaction until five years and this correlation doesn't follow employees with higher number of years spent at company.
+The correlation matrix below was plotted to visualize any possible linear relationship between numerical variables. Due to the fact that there are a high number of observations, the color code isn't perfectly visible in the limited area of the plot but they are more visible when zoomed in: <img src="project1_files/figure-markdown_github/unnamed-chunk-8-1.png" style="display: block; margin: auto auto auto 0;" /> The satisfaction level plotted against last evaluation shows three groups very likely to leave; two groups which have high scores in their last evaluation and one group which has low. The two high scoring groups are split by satisfaction level as one group finds high satisfaction while the other finds moderate satisfaction at work. The low scoring group in their last evaluation find little to none satisfaction at the company. The satisfaction level and the number of projects doesn't show a clear correlation but it can be seen slightly that employees with high number of projects completed tend more to leave. A higher correlation can be seen between satisfaction level and the average monthly hours with employees that have high working hours with high satisfaction or employees with low working hours and low satisfaction tend to leave the company. Time spent at company show a positive correlation with the satisfaction until five years and this correlation doesn't follow employees with higher number of years spent at company.
 
 The last evaluation and number of projects worked show that the employees that got high scores in their last evaluation working on high number of projects or people that got low scores in their last evaluation working on low number of projects tend to leave the company. This correlation can be explained by being ready to take a new career step or not being happy with the current job at all. A similar relationship is more obvious between last evaluation score and average monthly hours. Employees with high working hours that got high scores in their latest evaluation and employees with low working hours that got low scores in their evaluation tend to leave the company. Finally, up to five years of experience in the company, employees with high and low end scores of last evaluation tend to leave the company. Employees don't tend to leave company after five years.
 
@@ -281,7 +272,7 @@ If we observe PC1; it can be seen that high values of the last evaluation, numbe
 
 If we observe PC2, it can be seen that high values of the satisfaction level, last evaluation and work accident a negative projection on PC2 whereas high values of time spent at the company will have positive projection on PC2. In that sense, PC2 seems to describe the high performing individuals who are actually happy with the conditions but experienced a work accident.
 
-The projected data on PC1 and PC2 can be seen below to provide the relationship more visually: <img src="project1_files/figure-markdown_github/unnamed-chunk-8-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the graph that the observations for individuals who leave or stay show differences which is a good indication that classification is feasible. However, not only two principle components could be enough to make a classification on the whole dataset. That's why, an analysis on the amount of variation explained by each principal component was made. It can be seen below in percentage rounded to 2 decimal points:
+The projected data on PC1 and PC2 can be seen below to provide the relationship more visually: <img src="project1_files/figure-markdown_github/unnamed-chunk-9-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the graph that the observations for individuals who leave or stay show differences which is a good indication that classification is feasible. However, not only two principle components could be enough to make a classification on the whole dataset. That's why, an analysis on the amount of variation explained by each principal component was made. It can be seen below in percentage rounded to 2 decimal points:
 
 \begin{table}[!h]
 \centering
@@ -299,7 +290,7 @@ PC11      & PC12      & PC13      & PC14      & PC15    & PC16     & PC17     & 
 1.33 \% & 1.25 \% & 1.2 \% & 1.18 \% & 1.17 \% & 1.17 \% & 1.17 \% & 1.07 \% & 0.00 \% & 0.00 \% \\ \hline
 \end{tabular}
 \end{table}
-The cumulative sum of variances explained by the principal components is plotted in the below figure: <img src="project1_files/figure-markdown_github/unnamed-chunk-9-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the values provided and the plot that the last 2 principal components doesn't explain much about the variance of our dataset whereas the first 5 principal components explain more than 60% of the total variance. Moreover, the last 11 principal components add up to approximately 10 percent This means that there is a possibility of lowering the dimensionality of the dataset based on how much variance we will prefer to drop.
+The cumulative sum of variances explained by the principal components is plotted in the below figure: <img src="project1_files/figure-markdown_github/unnamed-chunk-10-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the values provided and the plot that the last 2 principal components doesn't explain much about the variance of our dataset whereas the first 5 principal components explain more than 60% of the total variance. Moreover, the last 11 principal components add up to approximately 10 percent This means that there is a possibility of lowering the dimensionality of the dataset based on how much variance we will prefer to drop.
 
 4 Discussion
 ============
