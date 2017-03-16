@@ -229,33 +229,29 @@ This method of standardization can be applied to numerical variables and even to
 
 Once our data set is standardized for all the variables and new variables added, we ended up with a data set of 20 variables. Now, we need to obtain a subspace where we can project our dataset where the explanation of variability is maximized so that there is a possibility of finding a lower-dimensional representation. The orthonormal eigenvectors with the largest eigenvalues will solve this maximization problem, so we applied singular value decomposition to compute the eigenvectors with correspoding eigenvalues. The singular value decomposition returns three matrices; a diagonal matix with rank ordered set of singular values, *ϵ*, and two matrices containing singular vectors, U and V. The matrix V is the matrix containing right singular vectors and our dataset was projected on to the principal components by multiplying it with the matrix V. The variable order of our projected dataset along with principal component directions for PC1 and PC2 can be seen below:
 
-\begin{table}[!h]
-\centering
-\begin{tabular}{|l|c|c|}
-\hline
-\multicolumn{1}{|c|}{Variable} & \multicolumn{1}{c|}{PC1} & \multicolumn{1}{c|}{PC2} \\ \hline
-satisfaction\_level            & 0.0877264957             & -0.7947630               \\ \hline
-last\_evaluation               & -0.5068741120            & -0.3231416               \\ \hline
-number\_project                & -0.5787401115            & 0.1054799                \\ \hline
-average\_monthly\_hours        & -0.5488515541            & -0.0972323              \\ \hline
-time\_spend\_company           & -0.3138610900            & 0.2577985                \\ \hline
-work\_accident                 & 0.0191985080             & -0.3875204               \\ \hline
-promotion\_last\_5\_years      & -0.0105679628            & -0.1521692               \\ \hline
-dep.is.accounting              & -0.0014274743            & 0.0088775              \\ \hline
-dep.is.hr                      & 0.0058683897             & 0.0034956              \\ \hline
-dep.is.IT                      & -0.0006845824            & 0.0007312             \\ \hline
-dep.is.management              & -0.0086933252            & -0.0017470             \\ \hline
-dep.is.marketing               & 0.0026368420             & -0.0047328             \\ \hline
-dep.is.product\_mng            & 0.0010630014             & 0.0000632             \\ \hline
-dep.is.RandD                   & 0.0009113525             & -0.0056449             \\ \hline
-dep.is.sales                   & 0.0029320930             & 0.0025425              \\ \hline
-dep.is.support                 & 0.0006197088             & -0.0058293             \\ \hline
-dep.is.technical               & -0.0042139116            & 0.0018626              \\ \hline
-sal.is.low                     & 0.0043302419             & 0.0440945               \\ \hline
-sal.is.medium                  & -0.0061719555            & -0.0346875              \\ \hline
-sal.is.high                    & 0.0032386792             & -0.0176996              \\ \hline
-\end{tabular}
-\end{table}
+|       Variable Name       |      PC1      |     PC2    |
+|:-------------------------:|:-------------:|:----------:|
+|    satisfaction\_level    |  0.0877264957 | -0.7947630 |
+|      last\_evaluation     | -0.5068741120 | -0.3231416 |
+|      number\_project      | -0.5787401115 |  0.1054799 |
+|  average\_monthly\_hours  | -0.5488515541 | -0.0972323 |
+|    time\_spend\_company   | -0.3138610900 |  0.2577985 |
+|       work\_accident      |  0.0191985080 | -0.3875204 |
+| promotion\_last\_5\_years | -0.0105679628 | -0.1521692 |
+|     dep.is.accounting     | -0.0014274743 |  0.0088775 |
+|         dep.is.hr         |  0.0058683897 |  0.0034956 |
+|         dep.is.IT         | -0.0006845824 |  0.0007312 |
+|     dep.is.management     | -0.0086933252 | -0.0017470 |
+|      dep.is.marketing     |  0.0026368420 | -0.0047328 |
+|    dep.is.product\_mng    |  0.0010630014 |  0.0000632 |
+|        dep.is.RandD       |  0.0009113525 | -0.0056449 |
+|        dep.is.sales       |  0.0029320930 |  0.0025425 |
+|       dep.is.support      |  0.0006197088 | -0.0058293 |
+|      dep.is.technical     | -0.0042139116 |  0.0018626 |
+|         sal.is.low        |  0.0043302419 |  0.0440945 |
+|       sal.is.medium       | -0.0061719555 | -0.0346875 |
+|        sal.is.high        |  0.0032386792 | -0.0176996 |
+
 If we observe PC1; it can be seen that high values of the last evaluation, number of projects, average monthly hours and time spent at the company will have a negative projection on PC1 more predominantly than the other variables. In that sense, PC1 seems to describe the behaviour of the experienced individuals who have performed well in their last evaluation and have been managing a high number of projects with a high amount of working hours.
 
 If we observe PC2, it can be seen that high values of the satisfaction level, last evaluation and work accident a negative projection on PC2 whereas high values of time spent at the company will have positive projection on PC2. In that sense, PC2 seems to describe the high performing individuals who are actually happy with the conditions but experienced a work accident.
