@@ -5,6 +5,19 @@ Aviaja Mercedes Klein(s133537)
 Thomas Andersen Wilken(s170110)
 28 February 2017
 
+-   [1 Introduction](#introduction)
+-   [2 Descriptive Statistics](#descriptive-statistics)
+    -   [2.1 Histograms for Numerical Variables](#histograms-for-numerical-variables)
+    -   [2.2 Boxplots for Numerical Variables](#boxplots-for-numerical-variables)
+    -   [2.3 Barplots for Categorical Variables](#barplots-for-categorical-variables)
+    -   [2.4 Tables for Binary Variables](#tables-for-binary-variables)
+    -   [2.5 Correlation plot](#correlation-plot)
+    -   [2.6 Correlation of all variables with the "left" variable](#correlation-of-all-variables-with-the-left-variable)
+-   [3 Principal Component Analysis](#principal-component-analysis)
+-   [4 Discussion](#discussion)
+-   [5 Appendix](#appendix)
+    -   [Appendix A - Source Code](#appendix-a---source-code)
+
 1 Introduction
 ==============
 
@@ -90,140 +103,34 @@ For the tasks mentioned above, our raw data can't be used directly. We have two 
 
 A first look at the variables with the "summary" command in R can be seen in the below tables. It's a good way to spot potential problems and gives a rough idea about the whole data frame. As the dataset has already been clean from the start, we didn't notice any particular problems such as invalid values or obvious outliers.
 
-\begin{table}[!h]
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Satisfaction Level} \\
-Min.              & : 0.0900           \\
-1st Qu.           & : 0.4400           \\
-Median            & : 0.6400           \\
-Mean              & : 0.6128           \\
-3rd Qu.           & : 0.8200           \\
-Max.              & : 1.000             
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Last Evaluation} \\
-Min.               & : 0.3600            \\
-1st Qu.            & : 0.5600            \\
-Median             & : 0.7200            \\
-Mean               & : 0.7161            \\
-3rd Qu.            & : 0.8700            \\
-Max.               & : 1.000            
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Number Project} \\
-Min.               & : 2.000            \\
-1st Qu.            & : 3.000            \\
-Median             & : 4.000            \\
-Mean               & : 3.803            \\
-3rd Qu.            & : 5.000            \\
-Max.               & : 7.000            
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Average Monthly Hours} \\
-Min.               & : 96.0            \\
-1st Qu.            & : 156.0            \\
-Median             & : 200.0            \\
-Mean               & : 201.1            \\
-3rd Qu.            & : 245.0            \\
-Max.               & : 310.0            
-\end{tabular}
-}
-\end{table}
-\begin{table}[!h]
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Time spend company} \\
-Min.               & : 2.000            \\
-1st Qu.            & : 3.000            \\
-Median             & : 3.000            \\
-Mean               & : 3.498            \\
-3rd Qu.            & : 4.000            \\
-Max.               & : 10.000            
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Work Accident} \\
-No accident               & : 12830            \\
-Accident            & : 2169            
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Left} \\
-Stayed               & : 11148            \\
-Accident            & : 3571            
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Promotion Last 5 Years} \\
-Not Promoted              & : 14680            \\
-Promoted            & : 319            
-\end{tabular}
-}
-\end{table}
-\begin{table}[!h]
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Department} \\
-Sales             & : 4140            \\
-Technical         & : 2720            \\
-Support           & : 2229            \\
-IT                & : 1227            \\
-Product Mng.      & : 902            \\
-Marketing         & : 858            \\
-Other             & : 2923
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{Salary} \\
-Low            & : 7316            \\
-Medium         & : 6446            \\
-High           & : 1237            
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{} \\
-         
-\end{tabular}
-}
-\hfill
-\parbox{.20\linewidth}{
-\centering
-\begin{tabular}{ll}
-\multicolumn{2}{l}{} \\
-\end{tabular}
-}
-\end{table}
+| Variable Name         |   Min  | 1st Qu. | Median |  Mean  | 3rd Qu. |  Max.  |
+|:----------------------|:------:|:-------:|:------:|:------:|:-------:|:------:|
+| Satisfaction Level    | 0.0900 |  0.4400 | 0.6400 | 0.6128 |  0.8200 | 1.0000 |
+| Last evaluation       | 0.3600 |  0.5600 | 0.7200 | 0.7161 |  0.8700 | 1.0000 |
+| Number Project        |  2.000 |  3.000  |  4.000 |  3.803 |  5.0000 | 7.0000 |
+| Average monthly hours |  96.0  |  156.0  |  200.0 |  201.1 |  245.0  |  310.0 |
+| Time spend company    |  2.000 |  3.000  |  3.000 |  3.498 |  4.000  | 10.000 |
+
+|               | No Accident | Accident |
+|:--------------|:-----------:|:--------:|
+| Work accident |    12830    |   2169   |
+
+|                       | Not Promoted | Promoted |
+|:----------------------|:------------:|:--------:|
+| Promotion last 5years |     14680    |    319   |
+
+|      | Stayed | Left |
+|:-----|:------:|:----:|
+| Left |  11148 | 3571 |
+
+|            | Sales | Technical | Support |  IT  | Product Mg. | Marketing | Other |
+|:-----------|:-----:|:---------:|:-------:|:----:|:-----------:|:---------:|:-----:|
+| Department |  4140 |    2720   |   2229  | 1227 |     902     |    858    |  2923 |
+
+|        |  Low | Medium | High |
+|:-------|:----:|:------:|:----:|
+| Salary | 7316 |  6446  | 1237 |
+
 2.1 Histograms for Numerical Variables
 --------------------------------------
 
