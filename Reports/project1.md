@@ -13,24 +13,73 @@ Project 1 - Human Resources Analytics
 
 The dataset to be analyzed for this report is Human Resources data from Kaggle. It is a simulated dataset without containing any missing values or outliers. It contains 14999 observations that are employees of a company and has 10 variables describing the characteristics of these employees. These characteristics are shown in the table below:
 
-\begin{table}[!h]
-\centering
-\label{my-label}
-\begin{array}{|c|c|c|}
-\hline
-\textbf{Variable Name} & \textbf{Description}                                                                        & \textbf{Type}                                               \\ \hline
-Satisfaction Level     & \begin{tabular}[c]{@{}c@{}}Level of satisfaction of the employee\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Continous, ratio\end{tabular}  \\ \hline
-Last evaluation       & \begin{tabular}[c]{@{}c@{}}Evaluation of employee performance\end{tabular} & \begin{tabular}[c]{@{}c@{}}Continous, ratio\end{tabular} \\ \hline
-Number Project     & \begin{tabular}[c]{@{}c@{}}Number of projects completed while at work\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ratio\end{tabular}  \\ \hline
-Average monthly hours     & \begin{tabular}[c]{@{}c@{}}Average monthly hours at workplace\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ratio\end{tabular}  \\ \hline
-Time spend company     & \begin{tabular}[c]{@{}c@{}}Number of years spent in the company\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ratio\end{tabular}  \\ \hline
-Work accident     & \begin{tabular}[c]{@{}c@{}}Whether the employee left the workplace or not\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Promotion last 5years     & \begin{tabular}[c]{@{}c@{}}Whether the employee was promoted in the last five years\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Left    & \begin{tabular}[c]{@{}c@{}}Whether the employee left the workplace or not\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Department     & \begin{tabular}[c]{@{}c@{}}Departments in the company\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Salary    & \begin{tabular}[c]{@{}c@{}}Salary level of the employee\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ordinal\end{tabular}  \\ \hline
-\end{array}
-\end{table}
+<table>
+<colgroup>
+<col width="23%" />
+<col width="57%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Variable Name</th>
+<th align="center">Description</th>
+<th align="center">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Satisfaction Level</td>
+<td align="center">Level of satisfaction of the employee</td>
+<td align="center">Continous, ratio</td>
+</tr>
+<tr class="even">
+<td align="center">Last evaluation</td>
+<td align="center">Evaluation of employee performance</td>
+<td align="center">Continous, ratio</td>
+</tr>
+<tr class="odd">
+<td align="center">Number Project</td>
+<td align="center">Number of projects completed while at work</td>
+<td align="center">Discrete, ratio</td>
+</tr>
+<tr class="even">
+<td align="center">Average monthly hours</td>
+<td align="center">Average monthly hours at workplace</td>
+<td align="center">Discrete, ratio</td>
+</tr>
+<tr class="odd">
+<td align="center">Time spend company</td>
+<td align="center">Number of years spent in the company</td>
+<td align="center">Discrete, ratio</td>
+</tr>
+<tr class="even">
+<td align="center">Work accident</td>
+<td align="center">Whether the employee had an accident or not</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="odd">
+<td align="center">Promotion last 5years</td>
+<td align="center">Whether the employee was promoted in the last five years</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="even">
+<td align="center">Left</td>
+<td align="center">Whether the employee left the workplace or not</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="odd">
+<td align="center">Department</td>
+<td align="center">Departments in the company</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="even">
+<td align="center">Salary</td>
+<td align="center">Salary level of the employee</td>
+<td align="center">Discrete, ordinal</td>
+</tr>
+</tbody>
+</table>
+
 Our aim is to model whether an employee will leave the company or not by using machine learning methods. For supervised learning, the primary machine learning method can be logistic regression as it is mainly used for classification of binary variables. This fits our aim perfectly but tree-based methods can also be used for classification of whether the employee will leave the company or not. In any case, we will need all the variables in our dataset to perform the analysis.
 
 For unsupervised learning, the primary machine learning method can be clustering to be able to identify different characteristics of employees, which a priori could be groups like 'high performers' and 'low performers', 'senior management' or 'newcomers' that will actually contribute to the supervised learning method chosen. We will again use all the variables in our dataset to be able to obtain employees with similar behaviours.
