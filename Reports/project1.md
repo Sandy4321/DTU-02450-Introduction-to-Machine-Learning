@@ -1,8 +1,5 @@
 Course 02450 - Introduction to Machine Learning Project 1 - Exploratory Data Analysis
 ================
-Alp Gunsever(s101250)
-Aviaja Mercedes Klein(s133537)
-Thomas Andersen Wilken(s170110)
 28 February 2017
 
 -   [1 Introduction](#introduction)
