@@ -100,38 +100,35 @@ For the tasks mentioned above, our raw data can't be used directly. We have two 
 
 A first look at the variables with the "summary" command in R can be seen in the below tables. It's a good way to spot potential problems and gives a rough idea about the whole data frame. As the dataset has already been clean from the start, we didn't notice any particular problems such as invalid values or obvious outliers.
 
-| Variable Name         |   Min  | 1st Qu. | Median |  Mean  | 3rd Qu. |  Max.  |
-|:----------------------|:------:|:-------:|:------:|:------:|:-------:|:------:|
-| Satisfaction Level    | 0.0900 |  0.4400 | 0.6400 | 0.6128 |  0.8200 | 1.0000 |
-| Last evaluation       | 0.3600 |  0.5600 | 0.7200 | 0.7161 |  0.8700 | 1.0000 |
-| Number Project        |  2.000 |  3.000  |  4.000 |  3.803 |  5.0000 | 7.0000 |
-| Average monthly hours |  96.0  |  156.0  |  200.0 |  201.1 |  245.0  |  310.0 |
-| Time spend company    |  2.000 |  3.000  |  3.000 |  3.498 |  4.000  | 10.000 |
-
-|               | No Accident | Accident |
-|:--------------|:-----------:|:--------:|
-| Work accident |    12830    |   2169   |
-
-|                       | Not Promoted | Promoted |
-|:----------------------|:------------:|:--------:|
-| Promotion last 5years |     14680    |    319   |
-
-|      | Stayed | Left |
-|:-----|:------:|:----:|
-| Left |  11148 | 3571 |
-
-|            | Sales | Technical | Support |  IT  | Product Mg. | Marketing | Other |
-|:-----------|:-----:|:---------:|:-------:|:----:|:-----------:|:---------:|:-----:|
-| Department |  4140 |    2720   |   2229  | 1227 |     902     |    858    |  2923 |
-
-|        |  Low | Medium | High |
-|:-------|:----:|:------:|:----:|
-| Salary | 7316 |  6446  | 1237 |
+    ##  satisfaction_level last_evaluation  number_project  average_montly_hours
+    ##  Min.   :0.0900     Min.   :0.3600   Min.   :2.000   Min.   : 96.0       
+    ##  1st Qu.:0.4400     1st Qu.:0.5600   1st Qu.:3.000   1st Qu.:156.0       
+    ##  Median :0.6400     Median :0.7200   Median :4.000   Median :200.0       
+    ##  Mean   :0.6128     Mean   :0.7161   Mean   :3.803   Mean   :201.1       
+    ##  3rd Qu.:0.8200     3rd Qu.:0.8700   3rd Qu.:5.000   3rd Qu.:245.0       
+    ##  Max.   :1.0000     Max.   :1.0000   Max.   :7.000   Max.   :310.0       
+    ##                                                                          
+    ##  time_spend_company     Work_accident    promotion_last_5years
+    ##  Min.   : 2.000     no accident:12830   not promoted:14680    
+    ##  1st Qu.: 3.000     accident   : 2169   promoted    :  319    
+    ##  Median : 3.000                                               
+    ##  Mean   : 3.498                                               
+    ##  3rd Qu.: 4.000                                               
+    ##  Max.   :10.000                                               
+    ##                                                               
+    ##        department      salary    
+    ##  sales      :4140   low   :7316  
+    ##  technical  :2720   medium:6446  
+    ##  support    :2229   high  :1237  
+    ##  IT         :1227                
+    ##  product_mng: 902                
+    ##  marketing  : 858                
+    ##  (Other)    :2923
 
 2.1 Histograms for Numerical Variables
 --------------------------------------
 
-<img src="project1_files/figure-markdown_github/unnamed-chunk-3-1.png" style="display: block; margin: auto auto auto 0;" /> The first histogram on the uppermost left shows the satisfaction level distribution of the employees. The shape of the distribution doesn't represent a normal distribution but rather shows bimodal characteristic. The first peak is clustered around a satisfaction level from 0.00-0.10 while a second peak is clustered between 0.4-0.9, evenly distributed across the specified range representing almost 77 percent of the workforce.
+<img src="project1_files/figure-markdown_github/unnamed-chunk-4-1.png" style="display: block; margin: auto auto auto 0;" /> The first histogram on the uppermost left shows the satisfaction level distribution of the employees. The shape of the distribution doesn't represent a normal distribution but rather shows bimodal characteristic. The first peak is clustered around a satisfaction level from 0.00-0.10 while a second peak is clustered between 0.4-0.9, evenly distributed across the specified range representing almost 77 percent of the workforce.
 
 The histogram on the uppermost right shows the score of the employees' last evaluation and again the shape of the distribution is bimodal.The twin peaks indicates a low performing group of with score around 0.55 and a high performing group around 0.85 while many employees fall between the two groups.
 
@@ -148,7 +145,7 @@ To describe and visualize the distribution of our data in further detail, we pre
 
 If we look at the first set of boxplots, the first four numerical variables seem to be almost identically distributed. The difference in these four variables primarily stems from the different variance in the first quantile and after the third quantiles. We can also see that the time spent at the company has a compact distribution, where there is no difference between the second quantile and the median. This make sense, because as we mentioned earlier more than 40 percent of the employees have been in the company for exactly three years. Furthermore, time spent at company is the only variable that we can observe outliers according to the boxplots.
 
-<img src="project1_files/figure-markdown_github/unnamed-chunk-4-1.png" style="display: block; margin: auto auto auto 0;" /><img src="project1_files/figure-markdown_github/unnamed-chunk-4-2.png" style="display: block; margin: auto auto auto 0;" /> If we look at the second set of boxplots above we can see that there is a difference in distribution on the satisfaction level, the number of projects and the time spent at company based on whether the employee left the company. The median of the satisfaction level is much lower of the group who left and the variation between the first and third quantile is much larger compared to the group who stayed at the company. This makes perfect sense, and supports our hypotheses of the satisfaction level as one of the main reasons for why employees leave the company.
+<img src="project1_files/figure-markdown_github/unnamed-chunk-5-1.png" style="display: block; margin: auto auto auto 0;" /><img src="project1_files/figure-markdown_github/unnamed-chunk-5-2.png" style="display: block; margin: auto auto auto 0;" /> If we look at the second set of boxplots above we can see that there is a difference in distribution on the satisfaction level, the number of projects and the time spent at company based on whether the employee left the company. The median of the satisfaction level is much lower of the group who left and the variation between the first and third quantile is much larger compared to the group who stayed at the company. This makes perfect sense, and supports our hypotheses of the satisfaction level as one of the main reasons for why employees leave the company.
 
 When we observe the number of projects completed by the employees, we can see that the median stays the same for employees who left or stayed. However, there is higher variation in the first and third quantiles for the employees who left compared to the employees who stayed.
 
@@ -159,7 +156,7 @@ Finally, if we compare the box plots showing the time spent at the company, we c
 
 The barplots below represent the categorical variables that have more than two levels. The first two barplots show the number of people in each department who stayed or left and the precentage of the people in each department who stayed or left. The same logic is applied to the salary levels of the employees. The reason of this kind of visualization is to compare the total number of people in each category along with the comparison of percentage of people that left among each category as an indication of a reason for leaving the company.
 
-<img src="project1_files/figure-markdown_github/unnamed-chunk-5-1.png" style="display: block; margin: auto auto auto 0;" /><img src="project1_files/figure-markdown_github/unnamed-chunk-5-2.png" style="display: block; margin: auto auto auto 0;" />
+<img src="project1_files/figure-markdown_github/unnamed-chunk-6-1.png" style="display: block; margin: auto auto auto 0;" /><img src="project1_files/figure-markdown_github/unnamed-chunk-6-2.png" style="display: block; margin: auto auto auto 0;" />
 
 It can be seen from the graphs that the departments vary in size, ranging from the sales department with more than 4140 employees to management that have had 617 employees. Furthermore the graphs show that the share of employees who have left the company is largest in the HR department with almost 30 percent , whereas the share is smallest in the management department, where 14 percent of the employees left their job.
 
@@ -194,7 +191,7 @@ From the tables we can see that emplyees show a tendency to stay when when they 
 2.5 Correlation plot
 --------------------
 
-The correlation matrix below was plotted to visualize any possible linear relationship between numerical variables. Due to the fact that there are a high number of observations, the color code isn't perfectly visible in the limited area of the plot but they are more visible when zoomed in: <img src="project1_files/figure-markdown_github/unnamed-chunk-6-1.png" style="display: block; margin: auto auto auto 0;" /> The satisfaction level plotted against last evaluation shows three groups very likely to leave; two groups which have high scores in their last evaluation and one group which has low. The two high scoring groups are split by satisfaction level as one group finds high satisfaction while the other finds moderate satisfaction at work. The low scoring group in their last evaluation find little to none satisfaction at the company. The satisfaction level and the number of projects doesn't show a clear correlation but it can be seen slightly that employees with high number of projects completed tend more to leave. A higher correlation can be seen between satisfaction level and the average monthly hours with employees that have high working hours with high satisfaction or employees with low working hours and low satisfaction tend to leave the company. Time spent at company show a positive correlation with the satisfaction until five years and this correlation doesn't follow employees with higher number of years spent at company.
+The correlation matrix below was plotted to visualize any possible linear relationship between numerical variables. Due to the fact that there are a high number of observations, the color code isn't perfectly visible in the limited area of the plot but they are more visible when zoomed in: <img src="project1_files/figure-markdown_github/unnamed-chunk-7-1.png" style="display: block; margin: auto auto auto 0;" /> The satisfaction level plotted against last evaluation shows three groups very likely to leave; two groups which have high scores in their last evaluation and one group which has low. The two high scoring groups are split by satisfaction level as one group finds high satisfaction while the other finds moderate satisfaction at work. The low scoring group in their last evaluation find little to none satisfaction at the company. The satisfaction level and the number of projects doesn't show a clear correlation but it can be seen slightly that employees with high number of projects completed tend more to leave. A higher correlation can be seen between satisfaction level and the average monthly hours with employees that have high working hours with high satisfaction or employees with low working hours and low satisfaction tend to leave the company. Time spent at company show a positive correlation with the satisfaction until five years and this correlation doesn't follow employees with higher number of years spent at company.
 
 The last evaluation and number of projects worked show that the employees that got high scores in their last evaluation working on high number of projects or people that got low scores in their last evaluation working on low number of projects tend to leave the company. This correlation can be explained by being ready to take a new career step or not being happy with the current job at all. A similar relationship is more obvious between last evaluation score and average monthly hours. Employees with high working hours that got high scores in their latest evaluation and employees with low working hours that got low scores in their evaluation tend to leave the company. Finally, up to five years of experience in the company, employees with high and low end scores of last evaluation tend to leave the company. Employees don't tend to leave company after five years.
 
@@ -284,7 +281,7 @@ If we observe PC1; it can be seen that high values of the last evaluation, numbe
 
 If we observe PC2, it can be seen that high values of the satisfaction level, last evaluation and work accident a negative projection on PC2 whereas high values of time spent at the company will have positive projection on PC2. In that sense, PC2 seems to describe the high performing individuals who are actually happy with the conditions but experienced a work accident.
 
-The projected data on PC1 and PC2 can be seen below to provide the relationship more visually: <img src="project1_files/figure-markdown_github/unnamed-chunk-7-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the graph that the observations for individuals who leave or stay show differences which is a good indication that classification is feasible. However, not only two principle components could be enough to make a classification on the whole dataset. That's why, an analysis on the amount of variation explained by each principal component was made. It can be seen below in percentage rounded to 2 decimal points:
+The projected data on PC1 and PC2 can be seen below to provide the relationship more visually: <img src="project1_files/figure-markdown_github/unnamed-chunk-8-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the graph that the observations for individuals who leave or stay show differences which is a good indication that classification is feasible. However, not only two principle components could be enough to make a classification on the whole dataset. That's why, an analysis on the amount of variation explained by each principal component was made. It can be seen below in percentage rounded to 2 decimal points:
 
 \begin{table}[!h]
 \centering
@@ -302,7 +299,7 @@ PC11      & PC12      & PC13      & PC14      & PC15    & PC16     & PC17     & 
 1.33 \% & 1.25 \% & 1.2 \% & 1.18 \% & 1.17 \% & 1.17 \% & 1.17 \% & 1.07 \% & 0.00 \% & 0.00 \% \\ \hline
 \end{tabular}
 \end{table}
-The cumulative sum of variances explained by the principal components is plotted in the below figure: <img src="project1_files/figure-markdown_github/unnamed-chunk-8-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the values provided and the plot that the last 2 principal components doesn't explain much about the variance of our dataset whereas the first 5 principal components explain more than 60% of the total variance. Moreover, the last 11 principal components add up to approximately 10 percent This means that there is a possibility of lowering the dimensionality of the dataset based on how much variance we will prefer to drop.
+The cumulative sum of variances explained by the principal components is plotted in the below figure: <img src="project1_files/figure-markdown_github/unnamed-chunk-9-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the values provided and the plot that the last 2 principal components doesn't explain much about the variance of our dataset whereas the first 5 principal components explain more than 60% of the total variance. Moreover, the last 11 principal components add up to approximately 10 percent This means that there is a possibility of lowering the dimensionality of the dataset based on how much variance we will prefer to drop.
 
 4 Discussion
 ============
