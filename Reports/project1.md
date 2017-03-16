@@ -195,39 +195,29 @@ Finally, average monthly hours and time spent at company show a positive correla
 
 The linear correlation between all the variables and the "left" variable can be seen in the below table. The function "cor" is used in programming with R which returns the Pearson correlation coefficient that can be used as a measure of linear correlation in our case. This resulted in the dataframe below, listing the variables from the highest absolute value of correlation coefficient to the lowest:
 
-\begin{table}[!h]
-\parbox{.45\linewidth}{
-\centering
-\begin{tabular}{llr}
-1  & satisfaction\_level       & -0.3884 \\
-2  & Work\_accident            & -0.1546 \\
-3  & time\_spend\_company      & 0.1448  \\
-4  & sal.is.low                & 0.1347  \\
-5  & sal.is.high               & -0.1209 \\
-6  & average\_monthly\_hours   & 0.0713  \\
-7  & sal.is.medium             & -0.0688 \\
-8  & promotion\_last\_5\_years & -0.0618 \\
-9  & dep.is.RandD              & -0.0466 \\
-10 & dep.is.management         & -0.0460
-\end{tabular}
-}
-\hfill
-\parbox{.45\linewidth}{
-\centering
-\begin{tabular}{llr}
-11 & dep.is.hr                 & 0.0282  \\
-12 & number\_project           & 0.0238  \\
-13 & dep.is.technical          & 0.0201  \\
-14 & dep.is.accounting         & 0.01520 \\
-15 & dep.is.product\_mng       & -0.0110 \\
-16 & dep.is.IT                 & -0.0109 \\
-17 & dep.is.support            & 0.0107  \\
-18 & dep.is.sales              & 0.0099  \\
-19 & last\_evaluation          & 0.0066  \\
-20 & dep.is.marketing          & -0.0009
-\end{tabular}
-}
-\end{table}
+|       Variable Name       | Correlation Coefficient |
+|:-------------------------:|:-----------------------:|
+|    satisfaction\_level    |         -0.3884         |
+|       Work\_accident      |         -0.1546         |
+|    time\_spend\_company   |          0.1448         |
+|         sal.is.low        |          0.1347         |
+|        sal.is.high        |         -0.1209         |
+|  average\_monthly\_hours  |          0.0713         |
+|       sal.is.medium       |         -0.0688         |
+| promotion\_last\_5\_years |         -0.0618         |
+|        dep.is.RandD       |         -0.0466         |
+|     dep.is.management     |         -0.0460         |
+|         dep.is.hr         |          0.0282         |
+|      number\_project      |          0.0238         |
+|      dep.is.technical     |          0.0201         |
+|     dep.is.accounting     |          0.0152         |
+|    dep.is.product\_mng    |         -0.0110         |
+|         dep.is.IT         |         -0.0109         |
+|       dep.is.support      |          0.0107         |
+|        dep.is.sales       |          0.0099         |
+|      last\_evaluation     |          0.0066         |
+|      dep.is.marketing     |         -0.0009         |
+
 As can be seen from the table, satisfaction level negatively correlates with the tendency to leave the company. This is an expected relationship when a direct linear relationship is considered for the employees. However, the number of accidents when considered on its own shows a negative correlation with the employees' tendency to leave. When an employee experiences a work accident, he tends to stay in the company. This might indicate the company has good way to handle accidents that convince the employees to stay in the company longer.
 
 Similar outcome can be said about the other variables according to their correlation coefficient in the above table but this doesn't mean that we need to neglect any variable based on their correlation with leaving or staying in our analysis. The variables might contribute to a better relationship in combination with other variables. We will try to seek out these relationships in our principal component analysis.
