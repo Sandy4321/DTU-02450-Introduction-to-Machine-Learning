@@ -16,7 +16,7 @@ The dataset to be analyzed for this report is Human Resources data from Kaggle. 
 \begin{table}[!h]
 \centering
 \label{my-label}
-\begin{tabular}{|c|c|c|}
+\begin{array}{|c|c|c|}
 \hline
 \textbf{Variable Name} & \textbf{Description}                                                                        & \textbf{Type}                                               \\ \hline
 Satisfaction Level     & \begin{tabular}[c]{@{}c@{}}Level of satisfaction of the employee\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Continous, ratio\end{tabular}  \\ \hline
@@ -29,7 +29,7 @@ Promotion last 5years     & \begin{tabular}[c]{@{}c@{}}Whether the employee was 
 Left    & \begin{tabular}[c]{@{}c@{}}Whether the employee left the workplace or not\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
 Department     & \begin{tabular}[c]{@{}c@{}}Departments in the company\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
 Salary    & \begin{tabular}[c]{@{}c@{}}Salary level of the employee\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ordinal\end{tabular}  \\ \hline
-\end{tabular}
+\end{array}
 \end{table}
 Our aim is to model whether an employee will leave the company or not by using machine learning methods. For supervised learning, the primary machine learning method can be logistic regression as it is mainly used for classification of binary variables. This fits our aim perfectly but tree-based methods can also be used for classification of whether the employee will leave the company or not. In any case, we will need all the variables in our dataset to perform the analysis.
 
