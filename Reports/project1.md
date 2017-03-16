@@ -256,25 +256,21 @@ If we observe PC1; it can be seen that high values of the last evaluation, numbe
 
 If we observe PC2, it can be seen that high values of the satisfaction level, last evaluation and work accident a negative projection on PC2 whereas high values of time spent at the company will have positive projection on PC2. In that sense, PC2 seems to describe the high performing individuals who are actually happy with the conditions but experienced a work accident.
 
-The projected data on PC1 and PC2 can be seen below to provide the relationship more visually: <img src="project1_files/figure-markdown_github/unnamed-chunk-9-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the graph that the observations for individuals who leave or stay show differences which is a good indication that classification is feasible. However, not only two principle components could be enough to make a classification on the whole dataset. That's why, an analysis on the amount of variation explained by each principal component was made. It can be seen below in percentage rounded to 2 decimal points:
+The projected data on PC1 and PC2 can be seen below to provide the relationship more visually:
 
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
-PC1      & PC2      & PC3      & PC4      & PC5    & PC6     & PC7     & PC8     & PC9     & PC10    \\ \hline
-20.34 \% & 12.54 \% & 11.92 \% & 10.67 \% & 9.4 \% & 7.09 \% & 6.72 \% & 6.08 \% & 4.26 \% & 1.46 \% \\ \hline
-\end{tabular}
-\end{table}
-\begin{table}[!h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
-PC11      & PC12      & PC13      & PC14      & PC15    & PC16     & PC17     & PC18     & PC19     & PC20    \\ \hline
-1.33 \% & 1.25 \% & 1.2 \% & 1.18 \% & 1.17 \% & 1.17 \% & 1.17 \% & 1.07 \% & 0.00 \% & 0.00 \% \\ \hline
-\end{tabular}
-\end{table}
-The cumulative sum of variances explained by the principal components is plotted in the below figure: <img src="project1_files/figure-markdown_github/unnamed-chunk-10-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the values provided and the plot that the last 2 principal components doesn't explain much about the variance of our dataset whereas the first 5 principal components explain more than 60% of the total variance. Moreover, the last 11 principal components add up to approximately 10 percent This means that there is a possibility of lowering the dimensionality of the dataset based on how much variance we will prefer to drop.
+<img src="project1_files/figure-markdown_github/unnamed-chunk-9-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the graph that the observations for individuals who leave or stay show differences which is a good indication that classification is feasible. However, not only two principle components could be enough to make a classification on the whole dataset. That's why, an analysis on the amount of variation explained by each principal component was made. It can be seen below in percentage rounded to 2 decimal points:
+
+|   PC1  |   PC2  |   PC3  |   PC4  |  PC5 |  PC6  |  PC7  |  PC8  |  PC9  |  PC10 |
+|:------:|:------:|:------:|:------:|:----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| 20.34% | 12.54% | 11.92% | 10.67% | 9.4% | 7.09% | 6.72% | 6.08% | 4.26% | 1.46% |
+
+|  PC11 |  PC12 |  PC13 |  PC14 |  PC15 |  PC16 |  PC17 |  PC18 |  PC19 |  PC20 |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| 1.33% | 1.25% | 1.20% | 1.18% | 1.17% | 1.17% | 1.17% | 1.07% | 0.00% | 0.00% |
+
+The cumulative sum of variances explained by the principal components is plotted in the below figure:
+
+<img src="project1_files/figure-markdown_github/unnamed-chunk-10-1.png" style="display: block; margin: auto auto auto 0;" /> It can be seen from the values provided and the plot that the last 2 principal components doesn't explain much about the variance of our dataset whereas the first 5 principal components explain more than 60% of the total variance. Moreover, the last 11 principal components add up to approximately 10 percent This means that there is a possibility of lowering the dimensionality of the dataset based on how much variance we will prefer to drop.
 
 4 Discussion
 ============
