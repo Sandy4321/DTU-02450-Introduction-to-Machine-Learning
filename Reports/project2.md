@@ -5,24 +5,72 @@
 
 The dataset to be analyzed for this report is Human Resources data from Kaggle. It is a simulated dataset without containing any missing values or outliers. It contains 14999 observations that are employees of a company and has 10 variables describing the characteristics of these employees. These characteristics are shown in the table below:
 
-\begin{table}[!h]
-\centering
-\label{my-label}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Variable Name} & \textbf{Description}                                                                        & \textbf{Type}                                               \\ \hline
-Satisfaction Level     & \begin{tabular}[c]{@{}c@{}}Level of satisfaction of the employee\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Continous, ratio\end{tabular}  \\ \hline
-Last evaluation       & \begin{tabular}[c]{@{}c@{}}Evaluation of employee performance\end{tabular} & \begin{tabular}[c]{@{}c@{}}Continous, ratio\end{tabular} \\ \hline
-Number Project     & \begin{tabular}[c]{@{}c@{}}Number of projects completed while at work\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ratio\end{tabular}  \\ \hline
-Average monthly hours     & \begin{tabular}[c]{@{}c@{}}Average monthly hours at workplace\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ratio\end{tabular}  \\ \hline
-Time spend company     & \begin{tabular}[c]{@{}c@{}}Number of years spent in the company\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ratio\end{tabular}  \\ \hline
-Work accident     & \begin{tabular}[c]{@{}c@{}}Whether the employee left the workplace or not\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Promotion last 5years     & \begin{tabular}[c]{@{}c@{}}Whether the employee was promoted in the last five years\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Left    & \begin{tabular}[c]{@{}c@{}}Whether the employee left the workplace or not\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Department     & \begin{tabular}[c]{@{}c@{}}Departments in the company\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, nominal\end{tabular}  \\ \hline
-Salary    & \begin{tabular}[c]{@{}c@{}}Salary level of the employee\end{tabular}              & \begin{tabular}[c]{@{}c@{}}Discrete, ordinal\end{tabular}  \\ \hline
-\end{tabular}
-\end{table}
+<table>
+<colgroup>
+<col width="23%" />
+<col width="57%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Variable Name</th>
+<th align="center">Description</th>
+<th align="center">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Satisfaction Level</td>
+<td align="center">Level of satisfaction of the employee</td>
+<td align="center">Continous, ratio</td>
+</tr>
+<tr class="even">
+<td align="center">Last evaluation</td>
+<td align="center">Evaluation of employee performance</td>
+<td align="center">Continous, ratio</td>
+</tr>
+<tr class="odd">
+<td align="center">Number Project</td>
+<td align="center">Number of projects completed while at work</td>
+<td align="center">Discrete, ratio</td>
+</tr>
+<tr class="even">
+<td align="center">Average monthly hours</td>
+<td align="center">Average monthly hours at workplace</td>
+<td align="center">Discrete, ratio</td>
+</tr>
+<tr class="odd">
+<td align="center">Time spend company</td>
+<td align="center">Number of years spent in the company</td>
+<td align="center">Discrete, ratio</td>
+</tr>
+<tr class="even">
+<td align="center">Work accident</td>
+<td align="center">Whether the employee had an accident or not</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="odd">
+<td align="center">Promotion last 5years</td>
+<td align="center">Whether the employee was promoted in the last five years</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="even">
+<td align="center">Left</td>
+<td align="center">Whether the employee left the workplace or not</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="odd">
+<td align="center">Department</td>
+<td align="center">Departments in the company</td>
+<td align="center">Discrete, nominal</td>
+</tr>
+<tr class="even">
+<td align="center">Salary</td>
+<td align="center">Salary level of the employee</td>
+<td align="center">Discrete, ordinal</td>
+</tr>
+</tbody>
+</table>
 The aim of the project is to analyze data using supervised learning methods using regression and classification. The regression models will try to estimate the satisfaction level of an employee whereas the classification models will try to predict whether an employee will leave the company or not.
 
 The satisfaction level is a continous variable as can be seen in the above table and is a good metric for any company's HR department to be able to estimate if the employee is happy or not. Satisfaction level had also the highest correlation to whether an employee will leave the company or not, which came out as an observation from the first project. The "left" variable is a binary variable which will be used as the variable to be predicted by the classification models as it's the most important variable from a company's HR department perspective. It can be used as a decisive tool if the HR department can predict the employees' tendency to leave the company and can take precautions on time.
