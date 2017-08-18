@@ -94,7 +94,7 @@ The regression problem we are trying to solve is the satisfaction level of the e
 
 The first model implemented was the artificial neural networks. The parameter we are trying to optimize for this model is the number of hidden nodes. The network model is executed in each inner cross validation fold for the number of hidden nodes optimization. The sum of squared error is calculated for models with different hidden nodes and the average error in each hidden node is plotted. The node giving the minimum test error was picked as the calculated node to be used in the outer cross validation level. As there are three outer cross validation folds in the outer level, there are three plots showing the sum of squared error vs the number of hidden nodes.
 
-![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-3-1.png)![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-3-2.png)![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-3-3.png)
+![](project2_files/figure-markdown_github/unnamed-chunk-3-1.png)![](project2_files/figure-markdown_github/unnamed-chunk-3-2.png)![](project2_files/figure-markdown_github/unnamed-chunk-3-3.png)
 
 According to the sum of squares test error for the number of hidden nodes in each outer crossvalidation fold, the number of nodes for the ANN model was chosen as 1. This is an unexpected outcome as ANN model should have been performing with higher number of nodes but the low computational power for this analysis isn't sufficient to make a larger analysis. The loss of complexity in the model is sacrificed for time necessary to make further analysis. The best ANN model fit can be seen in the below graph.
 
@@ -102,11 +102,11 @@ According to the sum of squares test error for the number of hidden nodes in eac
 
 The second model implemented was the linear regression.For this model, in the inner level of crossvalidation folds, we are trying to optimize the number of parameters by forward feature selection. The function used in the exercise sessions were taken for forward feature selection. As 3 fold crossvalidation is used in the outer level, three models with different choices of features were created and plotted in the below graph.
 
-![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-5-1.png)
+![](project2_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
 As can be seen from the plot, the number of projects and the left variables were chosen for all three models, whereas the last evaluation variable was chosen for two of the models. While determining the final regression model, including these three variables into the final linear regression model would minimize the error.
 
-The sum of squared errors were collected for each outer crossvalidation loop and then divided by the number of test observations to obtain the mean sum of squared errors. They can be seen in the below plot which can give an indication when comparing the regression model performance: ![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-6-1.png)
+The sum of squared errors were collected for each outer crossvalidation loop and then divided by the number of test observations to obtain the mean sum of squared errors. They can be seen in the below plot which can give an indication when comparing the regression model performance: ![](project2_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 It can be seen from the above graph that the models improved the performance compared to the base model. When linear regression model is compared to the ANN model, it showed a lower error rate. This should have been an unexpected result in general, but in our case with small sample size, low number of hidden nodes and low number of trials because of low computationa power, this result could be taken as expected. Another aspect of the result is the high error rate even for our best model. It shows an error rate around 80% which means that the results of the model aren't very reliable in determining the satisfaction level of an employee. The data doesn't seem to be suitable for a linear model for regression analysis.
 
@@ -127,13 +127,13 @@ In the below graphs, the error is calculated for each model in each inner cross 
 
 The parameter we are trying to finetune for decision tree method is the pruning level whereas it is the number of neighbours for k-nearest neighbour method and finally it's the regularization constant for the logistic regression. They are plotted as the x-axes of each plot.
 
-![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-9-1.png)![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-9-2.png)
+![](project2_files/figure-markdown_github/unnamed-chunk-9-1.png)![](project2_files/figure-markdown_github/unnamed-chunk-9-2.png)
 
 For decision tree modeling, the "rpart" package was used and for k-nearest neighbour modeling, the "FNN" package was used. However, for logistic regression modeling, the "glm" package was not sufficient for running different values of the regularization parameter so for logistic regression, the "glmnet" package was used where it was made possible to assign a range of lambda values to the logistic regression model.
 
 The errors for each model have been calculated and they are plotted as boxplots in the below graph to be able to compare the error rate in order to determine the best classifier. The base case is also plotted where all the employees are assumed to have left the company so that we could see if the model would provide any improvement.
 
-![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-10-1.png)
+![](project2_files/figure-markdown_github/unnamed-chunk-10-1.png)
 
 As we used holdout cross validation for the outer level, there are only two error observations plotted for each model in the boxplots which makes it harder to determine. Nevertheless, it can be seen that the decision tree model and the k-nearest neighbour model give the lowest error rate and show significant improvement compared to the base case.
 
@@ -143,4 +143,4 @@ In order to statistically compare the performance of these two best models, a pa
 
 As stated above, the decision tree model and the k-nearest neighbour model are not statistically different. Nevertheless, the model with the lowest error rate, which is the decision tree, is plotted in the below graph with the optimized pruning level.
 
-![](project2_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-12-1.png)
+![](project2_files/figure-markdown_github/unnamed-chunk-12-1.png)
