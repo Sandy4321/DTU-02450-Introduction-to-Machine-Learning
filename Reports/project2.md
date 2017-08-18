@@ -1,4 +1,10 @@
+Course 02450 - Introduction to Machine Learning Project 2 - Supervised Learning: Regression and Classification
+================
+04 April 2017
 
+-   [1 Introduction](#introduction)
+-   [2 Regression](#regression)
+-   [3 Classification](#classification)
 
 1 Introduction
 ==============
