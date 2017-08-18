@@ -92,7 +92,7 @@ The first model implemented was the artificial neural networks. The parameter we
 
 According to the sum of squares test error for the number of hidden nodes in each outer crossvalidation fold, the number of nodes for the ANN model was chosen as 1. This is an unexpected outcome as ANN model should have been performing with higher number of nodes but the low computational power for this analysis isn't sufficient to make a larger analysis. The loss of complexity in the model is sacrificed for time necessary to make further analysis. The best ANN model fit can be seen in the below graph.
 
-![](ann.png)<!-- -->
+![](project2_files/figure-markdown_github/ann.png)<!-- -->
 
 The second model implemented was the linear regression.For this model, in the inner level of crossvalidation folds, we are trying to optimize the number of parameters by forward feature selection. The function used in the exercise sessions were taken for forward feature selection. As 3 fold crossvalidation is used in the outer level, three models with different choices of features were created and plotted in the below graph.
 
